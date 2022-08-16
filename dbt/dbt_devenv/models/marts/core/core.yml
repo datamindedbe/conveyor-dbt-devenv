@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_location
+    description: This table has basic information about the location
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_order
+    description: This table holds the details regarding orders
+    columns:
+      - name: location_id
+        tests:
+          - relationships:
+              to: ref('dim_location')
+              field: id
+
