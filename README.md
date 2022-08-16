@@ -3,6 +3,11 @@
 This project was generated with the following command: 
 `conveyor project create --name dbt-devenv --conveyor-template-version 1.1.0 --cookiecutter-docker-image datamindedbe/cookiecutter:1.1.0 --template dbt`
 
+Manifest was generated using local instance:
+- `docker-compose up`
+- `cd dbt/dbt_devenv`
+- `dbt seed --target local --profiles-dir ./..`
+
 ## Prerequisites
 
 - [dbt](https://docs.getdbt.com/dbt-cli/installation/)
