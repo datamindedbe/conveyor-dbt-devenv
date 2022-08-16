@@ -25,3 +25,21 @@ data "aws_iam_policy_document" "default" {
     }
   }
 }
+
+resource "aws_iam_role_policy" "dbt" {
+  name   = "dbt"
+  role   = aws_iam_role.default.id
+  policy = data.aws_iam_policy_document.dbt.json
+}
+
+data "aws_iam_policy_document" "dbt" {
+  statement {
+    actions = [
+      "secretsmanager:*"
+    ]
+    resources = [
+      "*"
+    ]
+    effect = "Allow"
+  }
+}

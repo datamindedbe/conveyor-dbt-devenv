@@ -1,28 +1,23 @@
 default:
   outputs:
-
     dev:
       type: postgres
-      host: [ hostname ]
-      port: [ port ]
+      threads: 1
+      host: conveyor-dbt-devenv.cpktidvmhbdw.eu-west-1.rds.amazonaws.com
+      port: 5432
+      user: "datafy"
+      pass: "{{ env_var('DBT_PASSWORD') }}"
+      dbname: datafy
+      schema: dbt
 
-      user: [ username ]
-      password: [ password ]
-
-      dbname: [ database name ]
-      schema: [ dbt schema ]
-      threads: [ 1 or more ]
-
-    prod:
+    local:
       type: postgres
-      host: [ hostname ]
-      port: [ port ]
-
-      user: [ username ]
-      password: [ password ]
-
-      dbname: [ database name ]
-      schema: [ dbt schema ]
-      threads: [ 1 or more ]
+      threads: 1
+      host: localhost
+      port: 5433
+      user: "conveyor"
+      pass: "conveyor"
+      dbname: conveyor
+      schema: dbt
 
   target: dev

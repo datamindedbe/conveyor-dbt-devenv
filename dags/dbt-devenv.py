@@ -1,5 +1,6 @@
 from airflow import DAG
 from conveyor.factories import ConveyorDbtTaskFactory
+from conveyor.secrets import AWSSecretsManagerValue
 from datetime import datetime, timedelta
 
 
@@ -20,6 +21,7 @@ dag = DAG(
 )
 
 factory = ConveyorDbtTaskFactory(
+    task_env_vars={"DBT_PASSWORD": AWSSecretsManagerValue(name="conveyor-dbt-devenv-rds"), },
     task_aws_role="dbt-devenv-{{ macros.conveyor.env() }}",
 )
 factory.add_tasks_to_dag(dag=dag)
