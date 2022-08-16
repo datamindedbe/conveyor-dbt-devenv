@@ -7,6 +7,8 @@ Manifest was generated using local instance:
 - `docker-compose up`
 - `cd dbt/dbt_devenv`
 - `dbt seed --target local --profiles-dir ./..`
+- `cd ../..`
+- `make manifest target=local`
 
 ## Prerequisites
 

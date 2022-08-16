@@ -5,7 +5,7 @@ default:
       threads: 1
       host: conveyor-dbt-devenv.cpktidvmhbdw.eu-west-1.rds.amazonaws.com
       port: 5432
-      user: "datafy"
+      user: "conveyor"
       pass: "{{ env_var('DBT_PASSWORD') }}"
       dbname: datafy
       schema: dbt
