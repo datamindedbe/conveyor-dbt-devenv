@@ -5,20 +5,20 @@ with source as (
 ),
 staging as (
     select
-        region,
-        country,
-        itemtype as item_type,
-        saleschannel as sales_channel,
-        orderpriority as order_priority,
-        TO_DATE(orderdate, 'MM/DD/YYYY') as order_data,
-        orderid as order_id,
-        TO_DATE(shipdate,'MM/DD/YYYY') as ship_date,
-        unitssold as unit_sold,
-        unitprice as unit_price,
-        unitcost as unit_cost,
-        totalrevenue as total_revenue,
-        totalcost as total_cost,
-        totalprofit as total_profit
+        "Region" as region,
+        "Country" as country,
+        "ItemType" as item_type,
+        "SalesChannel" as sales_channel,
+        "OrderPriority" as order_priority,
+        TO_DATE("OrderDate", 'MM/DD/YYYY') as order_data,
+        "OrderID" as order_id,
+        TO_DATE("ShipDate",'MM/DD/YYYY') as ship_date,
+        "UnitsSold" as unit_sold,
+        "UnitPrice" as unit_price,
+        "UnitCost" as unit_cost,
+        "TotalRevenue" as total_revenue,
+        "TotalCost" as total_cost,
+        "TotalProfit" as total_profit
     from source
 )
 select * from staging
