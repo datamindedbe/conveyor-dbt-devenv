@@ -7,7 +7,7 @@ default:
       port: 5432
       user: "conveyor"
       pass: "{{ env_var('DBT_PASSWORD') }}"
-      dbname: datafy
+      dbname: conveyor
       schema: dbt
 
     local:
