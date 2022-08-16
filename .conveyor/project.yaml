@@ -1,0 +1,13 @@
+docker:
+    path: .
+id: 8bdbd382-bc83-48dd-a81e-b45fea07c687
+name: dbt-devenv
+resources:
+    path: resources
+streaming:
+    filename: streaming.yaml
+template: ""
+version: "0.3"
+workflows:
+    path: dags
+    version: "2"
