@@ -9,12 +9,3 @@ models:
           - unique
           - not_null
 
-  - name: fct_order
-    description: This table holds the details regarding orders
-    columns:
-      - name: location_id
-        tests:
-          - relationships:
-              to: ref('dim_location')
-              field: id
-
