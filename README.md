@@ -10,6 +10,11 @@ Manifest was generated using local instance:
 - `cd ../..`
 - `make manifest target=local`
 
+You can directly run dbt commands:
+- `export DBT_PROFILES_DIR=/workspace/conveyor-dbt-devenv/dbt`
+- `cd dbt/dbt_devenv`
+- `dbt run --target local --model staging`
+
 ## Prerequisites
 
 - [dbt](https://docs.getdbt.com/dbt-cli/installation/)
