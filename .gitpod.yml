@@ -7,6 +7,7 @@ tasks:
       exec gp preview --external "$@"
       EOF
       sudo update-alternatives --install /usr/bin/www-browser www-browser /usr/local/bin/open.sh 100
+      exit
   - name: Install conveyor 
     init: curl -s https://datafy-cp-artifacts.s3.eu-west-1.amazonaws.com/cli-install/install.sh | bash
     command: |
